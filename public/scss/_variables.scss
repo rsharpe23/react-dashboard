@@ -1,0 +1,25 @@
+$color-white: #fff !default;
+$color-whitesmoke: #f7f7f7 !default;
+$color-silver: #eee !default;
+$color-seagreen: #42ba96 !default;
+$color-slategray: #869ab8 !default;
+$color-navy: #283655 !default;
+$color-dark: #1e1f26 !default;
+
+$font-family: sans-serif !default;
+$font-family-roboto: join(Roboto, $font-family, comma) !default; 
+
+$font-size-sm: 14px !default;
+$font-size-md: 16px !default;
+
+$font-weight-light: 300 !default;
+$font-weight-regular: 400 !default;
+$font-weight-bold: 700 !default;
+
+$line-height: 1.5 !default;
+
+$screen-xs: 0 !default;
+$screen-sm: 576px !default;
+$screen-md: 768px !default;
+$screen-lg: 992px !default;
+$screen-xl: 1200px !default;

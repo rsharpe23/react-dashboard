@@ -1,0 +1,30 @@
+@mixin add-font($path, $font-family, $font-style, $font-weight-map, $exclude-ext: null) {
+  $font-name: nth(_str-split($path, "/"), -1);
+
+  $format-map: (
+    ".woff2": "woff2",
+    ".woff": "woff",
+    ".ttf": "truetype",
+  );
+
+  @if $exclude-ext {
+    $format-map: map-remove($format-map, $exclude-ext...);
+  }
+
+  @each $font-type, $font-weight in $font-weight-map {
+    $src: null;
+    $full-path: "#{$path}/#{$font-name}-#{$font-type}";
+
+    @each $ext, $format in $format-map {
+      $temp: url($full-path + $ext) format($format);
+      $src: append($src, $temp, comma);
+    }
+
+    @font-face {
+      font-family: $font-family;
+      font-weight: $font-weight;
+      font-style: $font-style;
+      src: $src;
+    }
+  }
+}

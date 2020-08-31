@@ -1,0 +1,37 @@
+@include add-font('../public/fonts/Roboto', 'Roboto', normal, (
+  "Light": $font-weight-light,
+  "Regular": $font-weight-regular,
+  "Bold": $font-weight-bold,
+), (
+  ".woff2", 
+  ".woff",
+));
+
+@include add-font('../public/fonts/Roboto', 'Roboto', italic, (
+  "LightItalic": $font-weight-light,
+  "Italic": $font-weight-regular,
+  "BoldItalic": $font-weight-bold,
+), (
+  ".woff2", 
+  ".woff",
+));
+
+body {
+  background-color: $color-whitesmoke;
+  font-family: $font-family-roboto;
+  font-weight: $font-weight-light;
+  font-size: $font-size-md;
+  line-height: $line-height;
+
+  @media (max-width: 424px) {
+    font-size: $font-size-sm;
+  }
+}
+
+.ScrollbarMeasure {
+  position: absolute;
+  top: -9999px;
+  width: 50px;
+  height: 50px;
+  overflow: scroll;
+}

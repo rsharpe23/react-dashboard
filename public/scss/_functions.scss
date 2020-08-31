@@ -1,0 +1,35 @@
+@function _is-empty($str) {
+  @return not $str or $str == "";
+}
+
+@function _str-replace($str, $search, $replace) {
+  $index: str-index($str, $search);
+
+  @if not $index {
+    @return $str;
+  }
+
+  $before: str-slice($str, 1, $index - 1);
+  $after: str-slice($str, $index + str-length($search));
+
+  @return $before + $replace + _str-replace($after, $search, $replace);
+}
+
+@function _str-split($str, $separator) {
+  $index: str-index($str, $separator);
+
+  @if not $index {
+    @return $str;
+  }
+
+  $before: str-slice($str, 1, $index - 1);
+  $after: str-slice($str, $index + str-length($separator));
+
+  @return join($before, _str-split($after, $separator), comma);
+}
+
+@function _rem($px) {
+  $px-per-rem: 16px;
+  $total: $px / $px-per-rem;
+  @return #{$total}rem;
+}

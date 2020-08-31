@@ -1,0 +1,12 @@
+/* В WordPress нельзя кастомизировать тег img, только его обвертку */
+
+.Image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+
+  &_filled {
+    height: 100%;
+  }
+}

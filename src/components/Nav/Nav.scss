@@ -1,0 +1,105 @@
+.Nav {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateX(-100%);
+  color: $color-white;
+  background-color: $color-navy;
+  transition: transform 0.2s ease-in-out;
+
+  @media (min-width: $screen-md) {
+    transform: translateX(0);
+  }
+
+  .Menu {
+    text-align: center;
+
+    @media (min-width: $screen-md) {
+      text-align: left;
+    }
+
+    &-Item {
+      color: $color-slategray;
+    }
+
+    &-Link {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+      color: inherit;
+
+      @media (min-width: $screen-md) {
+        margin-top: 0;
+      }
+    }
+
+    &_subset {
+      margin-left: 0;
+
+      @media (min-width: $screen-md) {
+        margin-left: 1.75rem;
+      }
+
+      .Menu-Link {
+        margin-top: 0;
+      }
+
+      .Menu-Link_active {
+        text-decoration: underline;
+        pointer-events: none;
+      }
+    }
+  }
+
+  .Icon {
+    display: none;
+
+    @media (min-width: $screen-md) {
+      display: inline;
+    }
+  }
+
+  &-Area {
+    height: 100%;
+    position: relative;
+    padding-top: calc(50px + 1.1rem);
+
+    /* Через такую вложенность избавляемся от стилизации ссылок в суб-меню */
+    > .Menu > .Menu-Item > .Menu-Link_active {
+      color: $color-whitesmoke;
+      font-weight: $font-weight-bold;
+      text-decoration: none;
+      letter-spacing: 0.5px;
+      pointer-events: none;
+    }
+  }
+
+  &-Border {
+    display: block;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 50%;
+    right: -15px;
+    border-style: solid;
+    border-width: 14px 0 14px 14px;
+    border-color: transparent transparent transparent $color-seagreen;
+
+    @media (min-width: $screen-md) {
+      display: none;
+    }
+  }
+
+  &_active {
+    transform: translateX(0);
+
+    .Nav-Border {
+      right: 0;
+      border-width: 14px 14px 14px 0;
+      border-color: transparent $color-seagreen transparent transparent;
+    }
+  }
+}

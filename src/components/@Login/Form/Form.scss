@@ -1,0 +1,16 @@
+.Login .Form {
+  .Button {
+    width: 100%;
+  }
+
+  .Input[type="email"] {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .Input[type="password"] {
+    margin-top: -1px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+}

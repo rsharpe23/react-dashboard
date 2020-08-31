@@ -1,0 +1,21 @@
+.Button {
+  background-color: $color-seagreen !important;
+  border-color: $color-seagreen !important;
+
+  &:hover,
+  &:active {
+    background-color: darken($color-seagreen, 10%) !important;
+    border-color: darken($color-seagreen, 10%) !important;
+  }
+
+  &_outlined {
+    color: $color-seagreen !important;
+    background-color: transparent !important;
+
+    &:hover,
+    &:active {
+      color: darken($color-seagreen, 10%) !important;
+      background-color: transparent !important;
+    }
+  }
+}
