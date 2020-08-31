@@ -1,5 +1,5 @@
 # react-dashboard
 
-Simple dashboard by React & React Router & Custom WebApi.  
-More about WebApi https://  
+Simple dashboard by React & React Router & webApi.  
+More about webApi https://github.com/rsharpe23/web-api  
 See demo https://  
